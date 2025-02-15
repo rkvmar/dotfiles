@@ -12,7 +12,8 @@ function install-brew-dependencies {
 }
 
 function zsh-setup {
-  source ./terminal/p10k.zsh
+  echo 'source ~/dotfiles/zsh/.zshrc' >> ~/.zshrc
+  exec zsh
 }
 
 function nvim-setup {
