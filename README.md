@@ -1,12 +1,12 @@
-# Dotfiles
+# dotfiles
 
-Personal dotfiles and setup
+personal dotfiles and setup
 
-Installs and configures:
+installs and configures:
  - nvim
  - zsh
 
-## Setup
+## setup
 
 first, clone the repo
 
