@@ -16,6 +16,6 @@ function nvim-setup {
   mv ~/.config/nvim{,.bak}
   cp -a ./nvim ~/.config
 }
-#install-brew-dependencies
-#zsh-setup
+install-brew-dependencies
+zsh-setup
 nvim-setup
