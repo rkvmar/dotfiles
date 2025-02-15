@@ -3,6 +3,7 @@
 Personal dotfiles and setup
 Installs and configures:
  - nvim
+
  - zsh
 
 ## Setup
