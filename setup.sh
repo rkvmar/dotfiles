@@ -12,8 +12,7 @@ function install-brew-dependencies {
 }
 
 function zsh-setup {
-  mv ~/.zshrc{,.bak}
-  mv ~/powerlevel10k{,.bak}
+  [ -f ~/.zshrc ] && mv ~/.zshrc{,.bak}
   [ ! -d ~/powerlevel10k ] && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
   echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme \n source ~/dotfiles/terminal/p10k.zsh' >>~/.zshrc
   # echo 'source ~/dotfiles/terminal/p10k.zsh' >> ~/.zshrc
@@ -25,6 +24,6 @@ function nvim-setup {
   mv ~/.config/nvim{,.bak}
   cp -a ./nvim ~/.config
 }
-# install-brew-dependencies
+install-brew-dependencies
 zsh-setup
-# nvim-setup
+nvim-setup
