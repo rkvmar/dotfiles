@@ -511,39 +511,39 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.20784313976764679</real>
+		<real>0.18039216101169586</real>
 		<key>Color Space</key>
 		<string>P3</string>
 		<key>Green Component</key>
-		<real>0.14117647707462311</real>
+		<real>0.11764705926179886</real>
 		<key>Red Component</key>
-		<real>0.13333334028720856</real>
+		<real>0.11764705926179886</real>
 	</dict>
 	<key>Background Color (Dark)</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.20784313725490197</real>
+		<real>0.1803921568627451</real>
 		<key>Color Space</key>
 		<string>P3</string>
 		<key>Green Component</key>
-		<real>0.14117647058823529</real>
+		<real>0.11764705882352941</real>
 		<key>Red Component</key>
-		<real>0.13333333333333333</real>
+		<real>0.11764705882352941</real>
 	</dict>
 	<key>Background Color (Light)</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.20784313725490197</real>
+		<real>0.1803921568627451</real>
 		<key>Color Space</key>
 		<string>P3</string>
 		<key>Green Component</key>
-		<real>0.14117647058823529</real>
+		<real>0.11764705882352941</real>
 		<key>Red Component</key>
-		<real>0.13333333333333333</real>
+		<real>0.11764705882352941</real>
 	</dict>
 	<key>Badge Color</key>
 	<dict>
