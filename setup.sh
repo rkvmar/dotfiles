@@ -12,7 +12,7 @@ function install-brew-dependencies {
 }
 
 function zsh-setup {
-  echo 'source ~/dotfiles/zsh/.zshrc' >> ~/.zshrc
+  echo 'source ~/dotfiles/terminal/p10k.zsh' >> ~/.zshrc
   exec zsh
 }
 
