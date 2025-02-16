@@ -1,20 +1,21 @@
-# dotfiles
+# configurizer
 
-personal dotfiles and setup
+personal setup for tools
 
 installs and configures:
  - nvim
  - zsh
+ - git
 
 ## setup
 
 first, clone the repo
 
-`git clone https://github.com/rkvmar/dotfiles`
+`git clone https://github.com/rkvmar/configurizer`
 
 then, run the setup script
 
-`cd dotfiles`
+`cd configurizer`
 
 `zsh setup.sh`
 
