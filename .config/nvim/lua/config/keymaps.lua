@@ -3,13 +3,15 @@
 -- Add any additional keymaps here
 
 -- Make sure leader key is set (if not already set elsewhere)
-vim.g.mapleader = " "  -- Sets space as leader key
+vim.g.mapleader = " " -- Sets space as leader key
 
--- Map terminal escape 
+-- Map terminal escape
 -- 't' is terminal mode
 -- Using more explicit description in opts
-vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { 
+vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", {
     noremap = true,
     silent = true,
     desc = "Exit terminal mode"
 })
+
+vim.keymap.set("n", "<leader>t", ":TeXpresso %", { noremap = true, silent = true })
