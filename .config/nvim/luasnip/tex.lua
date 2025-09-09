@@ -33,8 +33,10 @@ return {
             \usepackage{graphicx}
             \usepackage{amsmath}
             \usepackage{tikz}
-            \usetikzlibrary{regular-polygon}
+            \usetikzlibrary{shapes.geometric}
             \usepackage{float}
+            \usepackage[latte, textcolor=true, pagecolor=true]{catppuccinpalette}
+
 
             \title{}
             \author{}
