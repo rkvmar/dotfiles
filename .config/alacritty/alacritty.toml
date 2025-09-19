@@ -95,7 +95,7 @@ dynamic_title = true
 #startup_mode = "Maximized"
 
 [window.dimensions]
-columns = 160
+columns = 200
 lines = 80
 
 [window.padding]
