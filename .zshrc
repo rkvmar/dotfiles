@@ -43,4 +43,5 @@ eval "$(fzf --zsh)"
 
 alias nix-rebuild="sudo darwin-rebuild switch --flake ~/nix#macos"
 alias ls='ls --color'
+alias lg='lazygit'
 if [ "$TMUX" = "" ]; then tmux; fi
