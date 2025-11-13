@@ -45,4 +45,6 @@ alias nix-rebuild="sudo darwin-rebuild switch --flake ~/nix#macos"
 alias ls='ls --color'
 alias lg='lazygit'
 alias t='tree -C'
+alias wG='curl v2d.wttr.in/San+Francisco'
+alias wC='curl wttr.in/San+Francisco'
 if [ "$TMUX" = "" ]; then tmux; fi

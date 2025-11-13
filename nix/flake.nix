@@ -39,7 +39,7 @@
           pkgs.sbcl
           pkgs.roswell
           pkgs.aerospace
-          plgs.supabase-cli
+          pkgs.supabase-cli
         ];
 
       fonts.packages =
