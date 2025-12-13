@@ -45,6 +45,5 @@ alias nix-rebuild="sudo darwin-rebuild switch --flake ~/nix#macos"
 alias ls='ls --color'
 alias lg='lazygit'
 alias t='tree -C'
-alias wegraph='curl v2d.wttr.in/San+Francisco'
-alias wego='curl wttr.in/San+Francisco'
+alias frcbuild='./gradlew build   -Dorg.gradle.java.home="/Users/ravi/wpilib/2025/jdk"'
 if [ "$TMUX" = "" ]; then tmux; fi
