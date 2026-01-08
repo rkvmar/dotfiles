@@ -40,6 +40,7 @@
           pkgs.roswell
           pkgs.aerospace
           pkgs.supabase-cli
+          pkgs.gradle
         ];
 
       fonts.packages =
