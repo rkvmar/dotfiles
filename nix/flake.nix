@@ -41,6 +41,7 @@
           pkgs.aerospace
           pkgs.supabase-cli
           pkgs.gradle
+          pkgs.maven
         ];
 
       fonts.packages =

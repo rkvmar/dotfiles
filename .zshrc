@@ -45,5 +45,9 @@ alias nix-rebuild="sudo darwin-rebuild switch --flake ~/nix#macos"
 alias ls='ls --color'
 alias lg='lazygit'
 alias t='tree -C'
-alias frcbuild='./gradlew build   -Dorg.gradle.java.home="/Users/ravi/wpilib/2025/jdk"'
+alias frcbuild='./gradlew build -Dorg.gradle.java.home="/Users/ravi/wpilib/2026/jdk"'
 if [ "$TMUX" = "" ]; then tmux; fi
+
+# cursed java stuff
+export JAVA_HOME="$HOME/wpilib/2026/jdk"
+export PATH="$JAVA_HOME/bin: $PATH"
