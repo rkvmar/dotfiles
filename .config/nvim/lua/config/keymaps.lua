@@ -9,9 +9,19 @@ vim.g.mapleader = " " -- Sets space as leader key
 -- 't' is terminal mode
 -- Using more explicit description in opts
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", {
-    noremap = true,
-    silent = true,
-    desc = "Exit terminal mode"
+  noremap = true,
+  silent = true,
+  desc = "Exit terminal mode",
 })
 
 vim.keymap.set("n", "<leader>t", ":TeXpresso %", { noremap = true, silent = true })
+
+local frcpal = require("frcpal")
+
+vim.keymap.set("n", "<leader>pb", function()
+  frcpal.gradle("build")
+end) -- pb for Project Build
+vim.keymap.set("n", "<leader>pd", function()
+  frcpal.gradle("deploy")
+end) -- pd for Project Deploy
+vim.keymap.set("n", "<leader>pD", frcpal.get_vendordep) -- pD for Project Dependencies
