@@ -42,6 +42,7 @@
           pkgs.supabase-cli
           pkgs.gradle
           pkgs.maven
+          pkgs.bun
         ];
 
       fonts.packages =

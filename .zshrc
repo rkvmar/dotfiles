@@ -48,6 +48,6 @@ alias t='tree -C'
 alias frcbuild='./gradlew build -Dorg.gradle.java.home="/Users/ravi/wpilib/2026/jdk"'
 if [ "$TMUX" = "" ]; then tmux; fi
 
-# cursed java stuff
-export JAVA_HOME="$HOME/wpilib/2026/jdk"
-export PATH="$JAVA_HOME/bin: $PATH"
+# # cursed java stuff
+# export JAVA_HOME="$HOME/wpilib/2026/jdk"
+# export PATH="$JAVA_HOME/bin: $PATH"
