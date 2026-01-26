@@ -43,6 +43,7 @@
           pkgs.gradle
           pkgs.maven
           pkgs.bun
+          pkgs.tree-sitter
         ];
 
       fonts.packages =
