@@ -44,6 +44,7 @@
           pkgs.maven
           pkgs.bun
           pkgs.tree-sitter
+          pkgs.aerc
         ];
 
       fonts.packages =

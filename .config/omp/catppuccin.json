@@ -1,12 +1,21 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-    "os": "#ACB0BE",
-    "pink": "#F5C2E7",
-    "lavender": "#B4BEFE",
-    "blue": "#89B4FA",
-    "white": "#FFFFFF",
-    "text": "#1E1E2E"
+    "pink": "#f5c2e7",
+    "mauve": "#cba6f7",
+    "red": "#f38ba8",
+    "maroon": "#eba0ac",
+    "peach": "#fab387",
+    "yellow": "#f9e2af",
+    "green": "#a6e3a1",
+    "teal": "#94e2d5",
+    "sky": "#89dceb",
+    "sapphire": "#74c7ec",
+    "blue": "#89b4fa",
+    "lavender": "#b4befe",
+    "base": "#1e1e2e",
+    "text": "#ffffff",
+    "os": "#1e1e2e"
   },
   "blocks": [
     {
@@ -14,7 +23,7 @@
       "segments": [
         {
           "background": "p:blue",
-          "foreground": "p:white",
+          "foreground": "p:text",
           "powerline_symbol": "\ue0b4",
           "leading_diamond": "\ue0b6",
           "style": "diamond",
@@ -23,7 +32,7 @@
         },
         {
           "background": "p:blue",
-          "foreground": "p:text",
+          "foreground": "p:base",
           "powerline_symbol": "\ue0b4",
           "style": "diamond",
           "template": "{{ .UserName }}@{{ .HostName }}",
@@ -31,7 +40,7 @@
         },
         {
           "background": "p:pink",
-          "foreground": "p:text",
+          "foreground": "p:base",
           "options": {
             "folder_icon": "..\ue5fe..",
             "home_icon": "~",
@@ -44,7 +53,7 @@
         },
         {
           "background": "p:lavender",
-          "foreground": "p:text",
+          "foreground": "p:base",
           "style": "powerline",
           "options": {
             "branch_icon": "\ue725 ",

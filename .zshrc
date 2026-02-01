@@ -46,6 +46,8 @@ alias ls='ls --color'
 alias lg='lazygit'
 alias t='tree -C'
 alias frcbuild='./gradlew build -Dorg.gradle.java.home="/Users/ravi/wpilib/2026/jdk"'
+alias n='nvim'
+alias nf='nvim $(fzf)'
 if [ "$TMUX" = "" ]; then tmux; fi
 
 # # cursed java stuff
