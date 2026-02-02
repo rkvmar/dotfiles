@@ -51,6 +51,3 @@ alias nf='nvim $(fzf)'
 alias c='clear'
 if [ "$TMUX" = "" ]; then tmux a || tmux; fi
 
-# # cursed java stuff
-# export JAVA_HOME="$HOME/wpilib/2026/jdk"
-# export PATH="$JAVA_HOME/bin: $PATH"
