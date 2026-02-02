@@ -3,4 +3,5 @@
 -- Add any additional options here
 local opt = vim.opt
 opt.shiftwidth = 4
+opt.linebreak = false
 -- vim.g.autoformat = false

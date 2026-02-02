@@ -48,6 +48,7 @@ alias t='tree -C'
 alias frcbuild='./gradlew build -Dorg.gradle.java.home="/Users/ravi/wpilib/2026/jdk"'
 alias n='nvim'
 alias nf='nvim $(fzf)'
+alias c='clear'
 if [ "$TMUX" = "" ]; then tmux; fi
 
 # # cursed java stuff
