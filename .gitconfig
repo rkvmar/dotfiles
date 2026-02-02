@@ -1,0 +1,32 @@
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[user]
+    name = Ravi
+    email = r2a3v5i7.kumar@gmail.com
+[http]
+    postBuffer = 524288000
+[init]
+    defaultBranch = main
+[pull]
+    rebase = false
+
+# delta
+
+[include]
+    path = ~/.config/delta/catppuccin.gitconfig
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+    features = catppuccin-mocha
+
+[merge]
+    conflictStyle = zdiff3

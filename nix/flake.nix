@@ -7,92 +7,101 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
-  let
-    configuration = { pkgs, config, ... }: {
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages =
-        [ 
-          pkgs.mkalias
-          pkgs.neovim
-          pkgs.tmux
-          pkgs.rectangle
-          pkgs.ripgrep
-          pkgs.iterm2
-          pkgs.fzf
-          pkgs.fd
-          pkgs.oh-my-posh
-          pkgs.stow
-          pkgs.tree
-          pkgs.zoxide
-          pkgs.git
-          pkgs.gh
-          pkgs.alacritty
-          pkgs.vesktop
-          pkgs.sl
-          pkgs.texpresso
-          pkgs.texliveSmall
-          pkgs.tectonic
-          pkgs.spotdl
-          pkgs.lazygit
-          pkgs.sbcl
-          pkgs.roswell
-          pkgs.aerospace
-          pkgs.supabase-cli
-          pkgs.gradle
-          pkgs.maven
-          pkgs.bun
-          pkgs.tree-sitter
-          pkgs.aerc
-        ];
+  outputs =
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+    }:
+    let
+      configuration =
+        { pkgs, config, ... }:
+        {
+          # List packages installed in system profile. To search by name, run:
+          # $ nix-env -qaP | grep wget
+          environment.systemPackages = [
+            pkgs.mkalias
+            pkgs.neovim
+            pkgs.tmux
+            pkgs.rectangle
+            pkgs.ripgrep
+            pkgs.iterm2
+            pkgs.fzf
+            pkgs.fd
+            pkgs.oh-my-posh
+            pkgs.stow
+            pkgs.tree
+            pkgs.zoxide
+            pkgs.git
+            pkgs.gh
+            pkgs.alacritty
+            pkgs.vesktop
+            pkgs.sl
+            pkgs.texpresso
+            pkgs.texliveSmall
+            pkgs.tectonic
+            pkgs.spotdl
+            pkgs.lazygit
+            pkgs.sbcl
+            pkgs.roswell
+            pkgs.aerospace
+            pkgs.supabase-cli
+            pkgs.gradle
+            pkgs.maven
+            pkgs.bun
+            pkgs.tree-sitter
+            pkgs.aerc
+            pkgs.delta
+            pkgs.nixfmt
+            pkgs.bat
+          ];
 
-      fonts.packages =
-      [
-        pkgs.nerd-fonts.jetbrains-mono
-      ];
+          fonts.packages = [
+            pkgs.nerd-fonts.jetbrains-mono
+          ];
 
-      system.activationScripts.applications.text = let
-  env = pkgs.buildEnv {
-    name = "system-applications";
-    paths = config.environment.systemPackages;
-    pathsToLink = "/Applications";
-  };
-in
-  pkgs.lib.mkForce ''
-  # Set up applications.
-  echo "setting up /Applications..." >&2
-  rm -rf /Applications/Nix\ Apps
-  mkdir -p /Applications/Nix\ Apps
-  find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-  while read -r src; do
-    app_name=$(basename "$src")
-    echo "copying $src" >&2
-    ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-  done
-      '';
-      # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
+          system.activationScripts.applications.text =
+            let
+              env = pkgs.buildEnv {
+                name = "system-applications";
+                paths = config.environment.systemPackages;
+                pathsToLink = "/Applications";
+              };
+            in
+            pkgs.lib.mkForce ''
+              # Set up applications.
+              echo "setting up /Applications..." >&2
+              rm -rf /Applications/Nix\ Apps
+              mkdir -p /Applications/Nix\ Apps
+              find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+              while read -r src; do
+                app_name=$(basename "$src")
+                echo "copying $src" >&2
+                ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+              done
+            '';
+          # Necessary for using flakes on this system.
+          nix.settings.experimental-features = "nix-command flakes";
 
-      # Enable alternative shell support in nix-darwin.
-      # programs.fish.enable = true;
+          # Enable alternative shell support in nix-darwin.
+          # programs.fish.enable = true;
 
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+          # Set Git commit hash for darwin-version.
+          system.configurationRevision = self.rev or self.dirtyRev or null;
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 6;
+          # Used for backwards compatibility, please read the changelog before changing.
+          # $ darwin-rebuild changelog
+          system.stateVersion = 6;
 
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
+          # The platform the configuration will be used on.
+          nixpkgs.hostPlatform = "aarch64-darwin";
+        };
+    in
+    {
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#Ravis-Macbook-Pro
+      darwinConfigurations."macos" = nix-darwin.lib.darwinSystem {
+        modules = [ configuration ];
+      };
     };
-  in
-  {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#Ravis-Macbook-Pro
-    darwinConfigurations."macos" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
-    };
-  };
 }
