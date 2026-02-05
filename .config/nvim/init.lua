@@ -3,6 +3,9 @@ require("config.lazy")
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
+--lsp notifs
+vim.lsp.handlers["$/progress"] = function() end
+
 --conform
 require("conform").setup({
   formatters_by_ft = {
