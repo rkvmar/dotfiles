@@ -54,6 +54,7 @@
             pkgs.delta
             pkgs.nixfmt
             pkgs.bat
+            pkgs.airdrop-cli
           ];
 
           fonts.packages = [

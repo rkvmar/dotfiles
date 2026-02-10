@@ -10,5 +10,6 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "java",
   callback = function()
     vim.b.autoformat = false
+    --vim.opt.shiftWidth = 4
   end,
 })
