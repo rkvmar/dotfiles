@@ -55,6 +55,7 @@
             pkgs.nixfmt
             pkgs.bat
             pkgs.airdrop-cli
+            pkgs.yazi
           ];
 
           fonts.packages = [

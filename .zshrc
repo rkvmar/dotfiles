@@ -1,6 +1,4 @@
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
 zinit light zsh-users/zsh-syntax-highlighting
@@ -12,12 +10,13 @@ zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
-zinit snippet OMZP::aws
-zinit snippet OMZP::kubectl
-zinit snippet OMZP::kubectx
+#zinit snippet OMZP::aws
+#zinit snippet OMZP::kubectl
+#zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
-autoload -U compinit && compinit
+autoload -Uz compinit
+compinit -C
 
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -30,6 +29,9 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -49,5 +51,8 @@ alias frcbuild='./gradlew build -Dorg.gradle.java.home="/Users/ravi/wpilib/2026/
 alias n='nvim'
 alias nf='nvim $(fzf)'
 alias c='clear'
-if [ "$TMUX" = "" ]; then tmux a || tmux; fi
+alias y='yazi'
 
+if [[ -z "$TMUX" && -n "$PS1" ]]; then
+  tmux attach-session -t main 2>/dev/null || tmux new-session -s main
+fi
