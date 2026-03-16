@@ -34,7 +34,7 @@
             pkgs.zoxide
             pkgs.git
             pkgs.gh
-            pkgs.alacritty
+            pkgs.alacritty-graphics
             pkgs.vesktop
             pkgs.sl
             pkgs.texpresso
@@ -56,6 +56,7 @@
             pkgs.bat
             pkgs.airdrop-cli
             pkgs.yazi
+            pkgs.go
           ];
 
           fonts.packages = [

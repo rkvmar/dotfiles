@@ -56,3 +56,6 @@ alias y='yazi'
 if [[ -z "$TMUX" && -n "$PS1" ]]; then
   tmux attach-session -t main 2>/dev/null || tmux new-session -s main
 fi
+
+# opencode
+export PATH=/Users/ravi/.opencode/bin:$PATH

@@ -1,3 +1,5 @@
+[mgr]
+title_format = "yazi {cwd}"
 [flavor]
 dark = "catppuccin-mocha"
 light = "catppuccin-mocha"

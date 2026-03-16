@@ -1,0 +1,2 @@
+[icon]
+append_exts = [{ name = "css", text = "", fg = "#00afff" }]
