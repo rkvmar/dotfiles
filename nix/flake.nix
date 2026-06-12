@@ -57,6 +57,9 @@
             pkgs.airdrop-cli
             pkgs.yazi
             pkgs.go
+            pkgs.librewolf
+            pkgs.hyfetch
+            pkgs.memlimit
           ];
 
           fonts.packages = [

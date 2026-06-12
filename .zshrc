@@ -59,3 +59,15 @@ fi
 
 # opencode
 export PATH=/Users/ravi/.opencode/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/Users/ravi/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# terminal-wakatime setup
+eval "$(terminal-wakatime init)"
+export PATH="$PATH:$(go env GOPATH)/bin"
