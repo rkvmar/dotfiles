@@ -59,7 +59,6 @@
             pkgs.go
             pkgs.librewolf
             pkgs.hyfetch
-            pkgs.memlimit
           ];
 
           fonts.packages = [
