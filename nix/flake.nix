@@ -59,6 +59,7 @@
             pkgs.go
             pkgs.librewolf
             pkgs.hyfetch
+            pkgs.iamb
           ];
 
           fonts.packages = [
