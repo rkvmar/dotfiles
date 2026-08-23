@@ -60,6 +60,8 @@
             pkgs.librewolf
             pkgs.hyfetch
             pkgs.iamb
+            pkgs.rye
+            pkgs.discordo
           ];
 
           fonts.packages = [
@@ -71,7 +73,7 @@
               env = pkgs.buildEnv {
                 name = "system-applications";
                 paths = config.environment.systemPackages;
-                pathsToLink = "/Applications";
+                pathsToLink = [ "/Applications" ];
               };
             in
             pkgs.lib.mkForce ''

@@ -46,7 +46,8 @@ eval "$(fzf --zsh)"
 alias nix-rebuild="sudo darwin-rebuild switch --flake ~/nix#macos"
 alias ls='ls --color'
 alias lg='lazygit'
-alias t='tree -C'
+alias t='tuxedo'
+alias tr='tree -C'
 alias frcbuild='./gradlew build -Dorg.gradle.java.home="/Users/ravi/wpilib/2026/jdk"'
 alias n='nvim'
 alias nf='nvim $(fzf)'
@@ -71,3 +72,10 @@ esac
 # terminal-wakatime setup
 eval "$(terminal-wakatime init)"
 export PATH="$PATH:$(go env GOPATH)/bin"
+
+# tuxedo
+export TODO_DIR="$HOME/todo"
+export TODO_FILE="$TODO_DIR/todo.txt"
+export DONE_FILE="$TODO_DIR/done.txt"
+
+. "$HOME/.local/bin/env"
